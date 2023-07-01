@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.*;
 import com.eblocadmin.backend.users.entity.User;
 
 public class UsersRowMapper implements RowMapper<User>{
@@ -15,10 +15,11 @@ public class UsersRowMapper implements RowMapper<User>{
 				.eba_id(rs.getLong("eba_id"))
 				.firstName(rs.getString("first_name"))
 				.lastName(rs.getString("last_name"))
-				.userName(rs.getString("username"))
+				.telephone(rs.getString("telephone"))
 				.email(rs.getString("email"))
-				.address(rs.getString("address"))
-				.phone(rs.getString("phone"))
+				.contactAddress(rs.getString("contact_address"))
+				.invoiceAddress(rs.getString("invoice_address"))
+				.city(rs.getString("city"))
 				.birthDate(getLocalDate(rs, "birth_date"))
 				.insertedDate(getLocalDateTime(rs, "inserted_date"))
 				.lastChangeDate(getLocalDateTime(rs, "last_change_date"))

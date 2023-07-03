@@ -5,8 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-
-import org.springframework.jdbc.core.*;
+import org.springframework.jdbc.core.RowMapper;
 import com.eblocadmin.backend.users.entity.User;
 
 public class UsersRowMapper implements RowMapper<User>{

@@ -13,13 +13,13 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class User {
-	
+
 	@Id
 	private long eba_id;
-	
+
 	private String firstName;
 	private String lastName;
 	private String telephone;
@@ -30,8 +30,11 @@ public class User {
 	private LocalDate birthDate;
 	private LocalDateTime insertedDate;
 	private LocalDateTime lastChangeDate;
-	
+
 	public String toString() {
-		return String.format("Users[eba_id=%s, firstName=%s, lastName=%s, telephone=%s, email=%s, contact_address=%s, invoice_address=%s, city=%s, birthDate=%s, insertedDate=%s, lastChangeDate=%s]", eba_id, firstName, lastName, telephone, email, contactAddress, invoiceAddress, city,birthDate, insertedDate, lastChangeDate);
+		return String.format(
+				"Users[eba_id=%s, firstName=%s, lastName=%s, telephone=%s, email=%s, contact_address=%s, invoice_address=%s, city=%s, birthDate=%s, insertedDate=%s, lastChangeDate=%s]",
+				eba_id, firstName, lastName, telephone, email, contactAddress, invoiceAddress, city, birthDate,
+				insertedDate, lastChangeDate);
 	}
 }

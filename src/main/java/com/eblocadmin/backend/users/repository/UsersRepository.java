@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.eblocadmin.backend.dbconnection.config.PostgresDataSourceConfig;
 import com.eblocadmin.backend.users.entity.User;
+import com.eblocadmin.backend.users.entity.UserType;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -24,7 +25,7 @@ public class UsersRepository {
 		this.postgresDataSourceConfig = postgresDataSourceConfig;
 	}
 
-	public List<User> getAnything() {
+	public List<User> retrieveAllUsers() {
 
 		List<User> usersList = new ArrayList<>();
 
@@ -33,7 +34,7 @@ public class UsersRepository {
 
 		String select = "SELECT * FROM users_group.eba_user_profile";
 
-		usersList = postgresNamedParameterJdbcTemplate.query(select, new UsersRowMapper());
+		usersList = postgresNamedParameterJdbcTemplate.query(select, new UserRowMapper());
 
 		return usersList;
 
@@ -59,5 +60,13 @@ public class UsersRepository {
 		NamedParameterJdbcTemplate postgresNamedParameterJdbcTemplate = new NamedParameterJdbcTemplate(
 				postgresDataSourceConfig.getHikariDataSource());
 		postgresNamedParameterJdbcTemplate.update(insertQuery, parameter);
+	}
+	
+	public List<UserType> retrieveAllUserTypes (){
+		return null;
+	}
+	
+	public void insertUserType (UserType userType) {
+		
 	}
 }

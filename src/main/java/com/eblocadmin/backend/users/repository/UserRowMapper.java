@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import org.springframework.jdbc.core.RowMapper;
 import com.eblocadmin.backend.users.entity.User;
 
-public class UsersRowMapper implements RowMapper<User>{
+public class UserRowMapper implements RowMapper<User>{
 	public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 		return User.builder()
 				.eba_id(rs.getLong("eba_id"))

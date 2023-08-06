@@ -31,10 +31,10 @@ public class User {
 	private LocalDateTime insertedDate;
 	private LocalDateTime lastChangeDate;
 
-	public String toString() {
-		return String.format(
-				"Users[eba_id=%s, firstName=%s, lastName=%s, telephone=%s, email=%s, contact_address=%s, invoice_address=%s, city=%s, birthDate=%s, insertedDate=%s, lastChangeDate=%s]",
-				eba_id, firstName, lastName, telephone, email, contactAddress, invoiceAddress, city, birthDate,
-				insertedDate, lastChangeDate);
-	}
+//	public String toString() {
+//		return String.format(
+//				"Users[eba_id=%s, firstName=%s, lastName=%s, telephone=%s, email=%s, contact_address=%s, invoice_address=%s, city=%s, birthDate=%s, insertedDate=%s, lastChangeDate=%s]",
+//				eba_id, firstName, lastName, telephone, email, contactAddress, invoiceAddress, city, birthDate,
+//				insertedDate, lastChangeDate);
+//	}
 }

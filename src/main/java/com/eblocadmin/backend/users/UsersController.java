@@ -32,7 +32,7 @@ public class UsersController {
 	
 	@PostMapping(value="/insert")
 	public void insertUser(@RequestBody User user) {
-		System.out.println("USer from POST: " + user);
+		System.out.println("User from POST: " + user);
 		usersService.insertUser(user);				
 	}
 }

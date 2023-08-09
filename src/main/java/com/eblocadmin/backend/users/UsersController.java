@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eblocadmin.backend.users.entity.User;
+import com.eblocadmin.backend.users.entity.UserType;
 
 import jakarta.websocket.server.PathParam;
 
@@ -25,14 +26,44 @@ public class UsersController {
 		this.usersService = usersService;
 	}
 	
-	@GetMapping(value="/all")
-	public List<User> getUsers() {		
-            return usersService.getSomeUsers();    
+	@GetMapping(value="/retrieveAllUsers")
+	public List<User> retrieveAllUsers() {		
+            return usersService.retrieveAllUsers();    
     }
 	
-	@PostMapping(value="/insert")
+	@GetMapping(value="/retrieveSpecificUserByEbaId")
+	public List<User> retrieveSpecificUserByEbaId(User user) {		
+            return usersService.retrieveSpecificUserByEbaId(user);    
+    }
+	
+	@PostMapping(value="/insertUser")
 	public void insertUser(@RequestBody User user) {
-		System.out.println("User from POST: " + user);
 		usersService.insertUser(user);				
 	}
+	
+	@PostMapping(value="/deleteSpecificUserByEbaId")
+	public void deleteSpecificUserByEbaId(User user) {
+		usersService.deleteSpecificUserByEbaId(user);
+	}
+	
+	@GetMapping(value="/retrieveAllUserTypes")
+	public List<UserType> retrieveAllUserTypes() {		
+            return usersService.retrieveAllUserTypes();    
+    }
+	
+	@GetMapping(value="/retrieveSpecificUserTypeByEbaId")
+	public List<UserType> retrieveSpecificUserTypeByEbaId(UserType userType) {		
+            return usersService.retrieveSpecificUserTypeByEbaId(userType);    
+    }
+	
+	@PostMapping(value="/insertUserType")
+	public void insertUserType(@RequestBody UserType userType) {
+		usersService.insertUserType(userType);				
+	}
+	
+	@PostMapping(value="/deleteSpecificUserTypeByEbaId")
+	public void deleteSpecificUserTypeByEbaId(UserType userType) {
+		usersService.deleteSpecificUserTypeByEbaId(userType);
+	}
+	
 }

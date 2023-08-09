@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class User {
 
 	@Id
-	private long eba_id;
+	private long ebaId;
 
 	private String firstName;
 	private String lastName;

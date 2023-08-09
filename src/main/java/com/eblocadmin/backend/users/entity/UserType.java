@@ -30,4 +30,5 @@ public class UserType {
 	private TypeOfRent typeOfRent;
 	private LocalDateTime insertedDate;
 	private LocalDateTime lastChangeDate;
+	private Integer ebaUserProfileId;
 }

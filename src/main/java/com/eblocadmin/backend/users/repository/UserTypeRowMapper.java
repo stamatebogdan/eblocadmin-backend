@@ -15,8 +15,8 @@ public class UserTypeRowMapper implements RowMapper<UserType>{
 	public UserType mapRow(ResultSet rs, int rowNum) throws SQLException {
 		return UserType.builder()
 				.ebaId(rs.getLong("eba_id"))
-				.firstName(getUserTypeVariables(rs, "first_name"))
-				.lastName(getUserTypeVariables(rs, "last_name"))
+				.firstName(rs.getString("first_name"))
+				.lastName(rs.getString("last_name"))
 				.landlord(rs.getBoolean("landlord"))
 				.tenant(rs.getBoolean("tenant"))
 				.moveInDate(getLocalDate(rs, "move_in_date"))
@@ -29,10 +29,6 @@ public class UserTypeRowMapper implements RowMapper<UserType>{
 				.insertedDate(getLocalDateTime(rs, "inserted_date"))
 				.lastChangeDate(getLocalDateTime(rs, "last_change_date"))
 				.build();
-	}
-	
-	private User getUserTypeVariables(ResultSet rs, String str) throws SQLException {
-		return rs.getObject(str, User.class);
 	}
 	
 	private TypeOfRent getTypeOfRent (ResultSet rs, String str) throws SQLException {

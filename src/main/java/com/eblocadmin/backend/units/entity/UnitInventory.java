@@ -3,6 +3,7 @@ package com.eblocadmin.backend.units.entity;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,9 +16,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UnitInventory {
 	
+	@Id
 	private Long ebaId;
+	
 	private Integer unitId;
-	private Unit unitName;
+	private String  unitName;
 	private Boolean airConditioner;
 	private Boolean smokeDetector;
 	private Boolean gasOven;

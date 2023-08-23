@@ -7,6 +7,7 @@ import com.eblocadmin.backend.users.entity.TypeOfRent;
 import com.eblocadmin.backend.users.entity.UserType;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,7 +20,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UnitLink {
 	
+	@Id
 	private Long ebaId;
+	
 	private Integer ebaPrimaryUnitId;
 	private String ebaPrimaryUnitName;
 	private Integer ebaSecondaryUnitId;

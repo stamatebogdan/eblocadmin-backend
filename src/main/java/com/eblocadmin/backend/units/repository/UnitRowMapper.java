@@ -17,7 +17,7 @@ public class UnitRowMapper implements RowMapper<Unit>{
 		return Unit.builder()
 				.ebaId(rs.getLong("eba_id"))
 				.unitName(rs.getString("unit_name"))
-				.unitType(getTypeOfUnit(rs,"unit_type"))
+				.unitType(rs.getString("unit_type"))
 				.ownerId(rs.getInt("eba_owner_id"))
 				.tenantId(rs.getInt("eba_tenant_id"))
 				.unitStreet(rs.getString("unit_street"))
@@ -43,11 +43,6 @@ public class UnitRowMapper implements RowMapper<Unit>{
 				.insertedDate(getLocalDateTime(rs, "inserted_date"))
 				.lastChangeDate(getLocalDateTime(rs, "last_change_date"))
 				.build();
-		
-	}
-	
-	private TypeOfUnit getTypeOfUnit (ResultSet rs, String str) throws SQLException {
-		return rs.getObject(str, TypeOfUnit.class);
 	}
 	
 	private LocalDate getLocalDate (ResultSet rs, String str) throws SQLException {

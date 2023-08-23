@@ -11,7 +11,7 @@ import com.eblocadmin.backend.users.entity.User;
 public class UserRowMapper implements RowMapper<User>{
 	public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 		return User.builder()
-				.eba_id(rs.getLong("eba_id"))
+				.ebaId(rs.getLong("eba_id"))
 				.firstName(rs.getString("first_name"))
 				.lastName(rs.getString("last_name"))
 				.telephone(rs.getString("telephone"))

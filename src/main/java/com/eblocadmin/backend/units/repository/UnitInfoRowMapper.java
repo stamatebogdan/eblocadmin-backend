@@ -16,8 +16,8 @@ public class UnitInfoRowMapper implements RowMapper<UnitInfo>{
 		return UnitInfo.builder()
 				.ebaId(rs.getLong("eba_id"))
 				.unitId(rs.getInt("unit_id"))
-				.unitName(getUnitObject(rs, "unit_name"))
-				.unitPurchasePrice(getUnitObject(rs, "unit_purchase_price"))
+				.unitName(rs.getString("unit_name"))
+				.unitPurchasePrice(rs.getString("unit_purchase_price"))
 				.unitWarranty(rs.getBoolean("unit_warranty"))
 				.unitWarrantyDueDate(getLocalDate(rs, "unit_warranty_due_date"))
 				.unitNotes(rs.getString("unit_notes"))
@@ -44,10 +44,6 @@ public class UnitInfoRowMapper implements RowMapper<UnitInfo>{
 				.insertedDate(getLocalDateTime(rs, "inserted_date"))
 				.lastChangeDate(getLocalDateTime(rs, "last_change_date"))
 				.build();
-	}
-	
-	private Unit getUnitObject ( ResultSet rs, String str) throws SQLException {
-		return rs.getObject(str, Unit.class);
 	}
 	
 	private LocalDate getLocalDate (ResultSet rs, String str) throws SQLException {

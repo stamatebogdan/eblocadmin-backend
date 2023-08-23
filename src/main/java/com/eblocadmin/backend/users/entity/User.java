@@ -2,7 +2,6 @@ package com.eblocadmin.backend.users.entity;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
@@ -18,7 +17,7 @@ import lombok.NoArgsConstructor;
 public class User {
 
 	@Id
-	private long ebaId;
+	private Long ebaId;
 
 	private String firstName;
 	private String lastName;

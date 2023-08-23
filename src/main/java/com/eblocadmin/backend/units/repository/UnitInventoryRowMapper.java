@@ -16,7 +16,7 @@ public class UnitInventoryRowMapper implements RowMapper<UnitInventory>{
 		return UnitInventory.builder()
 				.ebaId(rs.getLong("eba_id"))
 				.unitId(rs.getInt("unit_id"))
-				.unitName(getUnitObject(rs, "unit_name"))
+				.unitName(rs.getString("unit_name"))
 				.airConditioner(rs.getBoolean("air_conditioner"))
 				.smokeDetector(rs.getBoolean("smoke_detector"))
 				.gasOven(rs.getBoolean("gas_oven"))
@@ -35,10 +35,6 @@ public class UnitInventoryRowMapper implements RowMapper<UnitInventory>{
 				.insertedDate(getLocalDateTime(rs, "inserted_date"))
 				.lastChangeDate(getLocalDateTime(rs, "last_change_date"))
 				.build();
-	}
-	
-	private Unit getUnitObject ( ResultSet rs, String str) throws SQLException {
-		return rs.getObject(str, Unit.class);
 	}
 	
 	private LocalDate getLocalDate (ResultSet rs, String str) throws SQLException {

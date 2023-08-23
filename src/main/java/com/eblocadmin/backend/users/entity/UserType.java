@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,9 +17,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserType {
 	
+	@Id
 	private Long ebaId;
-	private User firstName;
-	private User lastName;
+	
+	private String firstName;
+	private String lastName;
 	private Boolean landlord;
 	private Boolean tenant;
 	private LocalDate moveInDate;

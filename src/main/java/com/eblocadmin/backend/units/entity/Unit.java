@@ -1,12 +1,14 @@
 package com.eblocadmin.backend.units.entity;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import com.eblocadmin.backend.users.entity.User;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,9 +21,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Unit {
 	
+	@Id
 	private Long ebaId;
 	private String unitName;
-	private TypeOfUnit unitType;
+	private String unitType;
 	private Integer ownerId;
 	private Integer tenantId;
 	private String unitStreet;

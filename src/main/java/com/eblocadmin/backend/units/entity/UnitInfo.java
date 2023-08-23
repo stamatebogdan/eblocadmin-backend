@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,10 +17,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UnitInfo {
 	
+	@Id
 	private Long ebaId;
+	
 	private Integer unitId;
-	private Unit unitName;
-	private Unit unitPurchasePrice;
+	private String unitName;
+	private String unitPurchasePrice;
 	private Boolean unitWarranty;
 	private LocalDate unitWarrantyDueDate;
 	private String unitNotes;
